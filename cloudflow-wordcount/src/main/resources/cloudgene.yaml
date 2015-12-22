@@ -14,7 +14,7 @@ mapred:
 
     - name: Cloudflow Wordcount on Spark
       spark: cloudflow-wordcount.jar
-      mainClass: cloudflow-wordcount.jar
+      mainClass: genepi.cloudflow.examples.WordCount
       params: spark $input $outputSpark
 
 
