@@ -1,0 +1,35 @@
+name: WordCount Cloudflow Pipeline
+description: Integrates a Cloudflow pipeline into Cloudgene
+version: 1.0
+website: http://hadoop.apache.org/
+category: Genepi Hadoop Examples
+
+mapred:
+
+  steps:
+
+    - name: Cloudflow Wordcount on MapReduce
+      jar: cloudflow-wordcount.jar
+      params: mapreduce $input $output
+
+    - name: Cloudflow Wordcount on Spark
+      jar: cloudflow-wordcount.jar
+      params: mapreduce $input $output
+
+
+  inputs:
+
+    - id: input
+      description: Input
+      type: hdfs-folder
+
+  outputs:
+
+    - id: output
+      description: Output
+      type: hdfs-folder
+      removeHeader: false
+      download: true
+      temp: true
+      zip: false
+      mergeOutput: false
