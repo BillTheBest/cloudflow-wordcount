@@ -10,11 +10,12 @@ mapred:
 
     - name: Cloudflow Wordcount on MapReduce
       jar: cloudflow-wordcount.jar
-      params: mapreduce $input $output
+      params: mapreduce $input $outputMapReduce
 
     - name: Cloudflow Wordcount on Spark
-      jar: cloudflow-wordcount.jar
-      params: mapreduce $input $output
+      spark: cloudflow-wordcount.jar
+      mainClass: cloudflow-wordcount.jar
+      params: spark $input $outputSpark
 
 
   inputs:
@@ -25,8 +26,17 @@ mapred:
 
   outputs:
 
-    - id: output
-      description: Output
+    - id: outputMapReduce
+      description: Output MapReduce
+      type: hdfs-folder
+      removeHeader: false
+      download: true
+      temp: true
+      zip: false
+      mergeOutput: false
+
+    - id: outputSpark
+      description: Output Spark
       type: hdfs-folder
       removeHeader: false
       download: true
