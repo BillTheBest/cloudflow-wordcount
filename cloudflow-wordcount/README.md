@@ -1,6 +1,9 @@
 # Cloudflow Wordcount
 
 This is a minimal and ready-to-run application which can be used to start your own Cloudflow pipelines.
+
+More about Cloudflow: https://github.com/genepi/cloudflow
+
 Happy Coding!
 
 ## Getting Started
